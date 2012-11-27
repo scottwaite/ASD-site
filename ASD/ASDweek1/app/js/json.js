@@ -1,6 +1,6 @@
 // Scott Waite
-// MIU 1210
-// MIU Week 3 Project 3
+// Advanced Scalable Data Infrastructures 1212
+// Project 1
 
 var json = {
 	"student1": {
