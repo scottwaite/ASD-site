@@ -1,55 +1,104 @@
 // Scott Waite
 // Advanced Scalable Data Infrastructures 1301
 // Project 1
+$('#home').on('pageinit', function () {
 
-
-$("#page1").on('pageinit', function(){
-
-        // Code needed for the homepage goes in this function
+    // Code needed for the homepage goes in this function
 
 });
 
 
-$('addItem').on('pageinit' function(){
+$('addItem').on('pageinit'function () {
 
-			var myForm = $('formId');
-				myForm.validate({
-				invalidHandler: function(form,validator) {
-				},
-				submitHandler: function() {
-			var data = myForm.serializeArray();
-				storeData(data);
-			}
-		});
-			
-		//any other code needed for addItem page goes here
+    delete $.validator.methods.date; //Remove Date Validation
+    var myForm = $("#addItemForm"); //Call JQ Validator
+
+    var myForm = $('formId');
+    myForm.validate({
+        invalidHandler: function (form, validator) {},
+        submitHandler: function () {
+            var data = myForm.serializeArray();
+            storeData(data);
+        }
+    });
+
+    //displayLink
+    $('#displayLink').on("click", function () {
+        displayEvents();
+
+    });
+
+    // Clear localStorage
+    $("#clear").on("click", function () {
+        if (localStorage.length === 0) {
+            alert("There is no data to clear.");
+        } else {
+            localStorage.clear();
+            alert("All data has been cleared!");
+        }
+    });
+});
+
+// loadData
+$('#loadData').on('pageinit', function () {
 
 });
+
+// displayItems
+$('#displayItems').on('pageinit', function () {
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //The functions below can go inside or outside the pageinit fuction for the page
 
 
-var autofillData = function (){
+var autofillData = function () {
 
 };
 
 
-var getData = function (){
+var getData = function () {
 
 };
 
 
-var storeData = function (){
+var storeData = function () {
 
 };
 
 
-var deleteItem = function (){
+var deleteItem = function () {
 
 };
 
 
-var clearLocal = function (){
+var clearLocal = function () {
 
 };
 
@@ -118,8 +167,8 @@ $('#page2').on('pageinit', function () {
         var id = Math.floor(Math.random() * 100000001);
         //Gather up all our form field values and store in an object.
         //Object properties contain array with the form label and input values.
-        //		getSelectedRadio();
-        //		getCheckboxValue();
+        //      getSelectedRadio();
+        //      getCheckboxValue();
         var item = {};
         item.group = ["Hair Color:", $('groups').value];
         item.studentid = ["Student ID:", $('studentid').value];
