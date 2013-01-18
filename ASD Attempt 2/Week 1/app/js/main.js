@@ -8,7 +8,7 @@ $('#home').on('pageinit', function () {
 });
 
 
-$('addItem').on('pageinit'function () {
+$('regist').on('pageinit'function () {
 
     delete $.validator.methods.date; //Remove Date Validation
     var myForm = $("#addItemForm"); //Call JQ Validator
@@ -54,27 +54,6 @@ $('#displayItems').on('pageinit', function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //The functions below can go inside or outside the pageinit fuction for the page
 
 
@@ -109,13 +88,14 @@ var clearLocal = function () {
 
 
 
-$('#page2').on('pageinit', function () {
+$('#page4').on('pageinit', function () {
 
 
     // Form code goes here
 
-    var myForm = $('#registerNow');
+    var myForm = $('#registrationForm');
     myForm.validate({
+        alert("validate");
         invalidHandler: function (form, validator) {},
         submitHandler: function () {
             var data = myForm.serializeArray();
@@ -163,7 +143,7 @@ $('#page2').on('pageinit', function () {
 
     };
 
-    function storeData() {
+    function storeData() { alert("Alert!");
         var id = Math.floor(Math.random() * 100000001);
         //Gather up all our form field values and store in an object.
         //Object properties contain array with the form label and input values.
