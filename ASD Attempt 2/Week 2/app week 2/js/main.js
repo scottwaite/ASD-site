@@ -8,12 +8,9 @@ $('#home').on('pageinit', function () {
 });
 
 
-$('regist').on('pageinit'function () {
+$('#page1').on('pageinit'function () {
 
-    delete $.validator.methods.date; //Remove Date Validation
-    var myForm = $("#addItemForm"); //Call JQ Validator
-
-    var myForm = $('formId');
+    var myForm = $("#registrationForm"); //Call validator
     myForm.validate({
         invalidHandler: function (form, validator) {},
         submitHandler: function () {
@@ -77,9 +74,6 @@ var deleteItem = function () {
 };
 
 
-var clearLocal = function () {
-
-};
 
 ///////////
 
@@ -175,16 +169,7 @@ $('#page4').on('pageinit', function () {
 
     };
 
-    var clearLocal = function () {
-        if (localStorage.length === 0) {
-            alert("There is no data to clear.")
-        } else {
-            localStorage.clear();
-            alert("All registrations are deleted!");
-            window.location.reload();
-            return false;
-        }
-
+ 
 
 
     });
